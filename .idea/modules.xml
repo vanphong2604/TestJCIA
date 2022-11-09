@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SeleniumWebDriver/SeleniumWebDriver.iml" filepath="$PROJECT_DIR$/SeleniumWebDriver/SeleniumWebDriver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TestJCIA.iml" filepath="$PROJECT_DIR$/.idea/TestJCIA.iml" />
+    </modules>
+  </component>
+</project>
