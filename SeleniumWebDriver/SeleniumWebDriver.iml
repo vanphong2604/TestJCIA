@@ -10,12 +10,6 @@
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.testng:testng:7.6.1" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
-    <orderEntry type="library" name="Maven: com.beust:jcommander:1.82" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.webjars:jquery:3.6.0" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -29,6 +23,7 @@
         <jarDirectory url="file://$USER_HOME$/Downloads/selenium-java-4.5.3" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -39,5 +34,17 @@
         <jarDirectory url="file://$USER_HOME$/Downloads/selenium-java-4.5.3/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: org.testng:testng:7.6.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
+    <orderEntry type="library" name="Maven: com.beust:jcommander:1.82" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.webjars:jquery:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml:3.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi:3.17" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml-schemas:3.17" level="project" />
+    <orderEntry type="library" name="Maven: com.github.virtuald:curvesapi:1.04" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.xmlbeans:xmlbeans:3.1.0" level="project" />
   </component>
 </module>
