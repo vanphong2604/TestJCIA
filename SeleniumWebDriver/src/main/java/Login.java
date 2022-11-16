@@ -5,13 +5,10 @@ import org.testng.annotations.Test;
 
 public class Login extends TestJCIA{
 
-    public Login() {
-        super("http://localhost:9000/login");
-    }
     @DataProvider
     public Object[][] Authentication() throws Exception {
 
-        Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\asus\\OneDrive\\Máy tính\\Testing\\btl\\Test.xlsx",4,"Sheet2");
+        Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\asus\\OneDrive\\Máy tính\\Testing\\btl\\Test.xlsx",4,"Login");
         return (testObjArray);
 
     }

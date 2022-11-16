@@ -3,11 +3,11 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class UpLoad extends TestJCIA{
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 
-    public UpLoad() {
-        super("http://localhost:9000/login");
-    }
+public class UpLoad extends TestJCIA{
 
     @DataProvider
     public Object[][] Authentication() throws Exception {
@@ -17,24 +17,71 @@ public class UpLoad extends TestJCIA{
         Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\asus\\OneDrive\\Máy tính\\Testing\\btl\\Test.xlsx",4,"Sheet3");
         return (testObjArray);
     }
-    @Test(dataProvider="Authentication")
-    public void upLoad(String projectName, String uploadYourProject, String expectedOutput) {
-        System.out.println(webDriver.getCurrentUrl());
+
+    public void upLoad(String projectName, String uploadYourProject) {
         webDriver.get("http://localhost:9000/upload");
-//        webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/form/div/span[2]/span")).clear();
-        webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/form/div/span[2]/span")).sendKeys(uploadYourProject);
-        webDriver.findElements(By.id("frompc-proj")).clear();
-        webDriver.findElement(By.id("frompc-proj")).sendKeys(projectName);
-        webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/form/button[1]")).click();
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/form/button[2]")).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        // Khởi tạo Robot class
+        Robot rb = null;
+        try {
+            rb = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+
+        // Copy File path vào Clipboard
+        StringSelection str = new StringSelection(uploadYourProject);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Nhấn Control+V để dán
+        rb.keyPress(KeyEvent.VK_CONTROL);
+        rb.keyPress(KeyEvent.VK_V);
+
+        // Xác nhận Control V trên
+        rb.keyRelease(KeyEvent.VK_CONTROL);
+        rb.keyRelease(KeyEvent.VK_V);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Nhấn Enter
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        webDriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/form/button[1]")).click();
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    @Test(dataProvider="Authentication")
+    public void upLoad(String projectName, String uploadYourProject, String expectedOutput) {
+        upLoad(projectName, uploadYourProject);
         Assert.assertEquals(webDriver.getCurrentUrl(), expectedOutput);
     }
-
-
-
 
 }

@@ -8,18 +8,10 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class SignUp extends TestJCIA{
-
-    public SignUp() {
-        super("http://localhost:9000");
-    }
-
     @DataProvider
-
     public Object[][] Authentication() throws Exception {
-
-        Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\asus\\OneDrive\\Máy tính\\Testing\\btl\\Test.xlsx",5,"Sheet1");
+        Object[][] testObjArray = ExcelUtils.getTableArray("C:\\Users\\asus\\OneDrive\\Máy tính\\Testing\\btl\\Test.xlsx",5,"SignUp");
         return (testObjArray);
-
     }
     @Test(dataProvider="Authentication")
     public void signUp(String userName, String Email, String passWord, String expectedOutput) {
@@ -41,5 +33,4 @@ public class SignUp extends TestJCIA{
         }
         Assert.assertEquals(webDriver.getCurrentUrl(), expectedOutput);
     }
-
 }

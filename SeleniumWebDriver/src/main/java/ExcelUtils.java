@@ -62,6 +62,7 @@ public class ExcelUtils {
                 //Print Excel data in console
                 if (row.getCell(j) != null) {
                     tabArray[i-2][j-1] = row.getCell(j).getStringCellValue();
+                    System.out.println(tabArray[i-2][j-1]);
                 } else {
                     tabArray[i-2][j-1] = "";
                 }
@@ -73,25 +74,4 @@ public class ExcelUtils {
         return(tabArray);
 
     }
-
-    public static String getCellData(int RowNum, int ColNum) throws Exception {
-
-
-        Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
-
-        int dataType = Cell.getColumnIndex();
-
-        if (dataType == 4) {
-
-            return "";
-
-        } else {
-
-            String CellData = Cell.getStringCellValue();
-
-            return CellData;
-
-        }
-    }
-
     }

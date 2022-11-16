@@ -4,13 +4,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public abstract class TestJCIA {
-    private String baseUrl;
+    private String baseUrl = "http://localhost:9000/login";
     private static final String DRIVERPATH = "C:\\Users\\asus\\Documents\\Testing\\TestJCIA\\Brower\\chromedriver.exe";;
-    protected WebDriver webDriver;
-
-    public TestJCIA(String baseUrl) {
-        this.baseUrl = baseUrl;
-    }
+    protected static WebDriver webDriver;
 
     @BeforeTest
     public void launchBrowser() {

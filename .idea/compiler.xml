@@ -13,4 +13,9 @@
       <module name="SeleniumWebDriver" target="11" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SeleniumWebDriver" options="--add-modules java.desktop,java.datatransfer" />
+    </option>
+  </component>
 </project>
